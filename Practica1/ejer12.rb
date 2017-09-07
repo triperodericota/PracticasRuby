@@ -1,8 +1,11 @@
 def rot(anString, aNumber)
 	letters = ('a'..'z').to_a
+	equivalent =  letters.map do |letter| ascii = letter.ord + aNumber
+		if ascii > 'z'.ord
+			'a'.ord + (ascii - 'z'.ord)
+		end
+	letters_equivalent = Hash [letters.each_with_index.map { |a,i| [a,equivalent[i] ] } ]
+	
 	encryted_string = ''
-	valid_block = case aNumber when aNumber > 25 then {|a_char| encryted_string << letters[ 25 - (letters.index(a_char))] }
-	else {|a_char| encryted_string << letters[letters.index(a_char) + aNumber] }
-	anString.each_char {|a_char| encryted_string + letters[ 25 - (letters.index(a_char))] }
 
 end
