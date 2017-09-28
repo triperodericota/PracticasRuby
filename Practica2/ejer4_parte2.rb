@@ -1,16 +1,20 @@
     module Countable
-        INVOCATIONS = 
-
+        INVOCATIONS = {}
+        
+        def Countable.included
+           INVOCATIONS[self] = { }
+        end
+        
         def self.count_invocations_of (sym)
-            INVOCATIONS[sym] = 0
+            INVOCATIONS[self][sym] = 0
         end
 
         def invoked?(sym)
             INVOCATIONS[sym] > 0
-        end{}
+        end
 
         def invoked (sym)
-            INVOCATIONS[sym]
+            INVOCATIONS
         end
 
     end
