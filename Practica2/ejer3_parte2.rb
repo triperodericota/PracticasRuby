@@ -11,6 +11,10 @@ end
 
 class Object include Reverso
 end
+o = Object.new
+o. extend Reverso
+puts o.object_id
+puts o.di_tcejbo
 
 un_string = "un string"
 puts un_string.object_id

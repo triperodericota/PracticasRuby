@@ -1,0 +1,9 @@
+begin
+## ninguna excepcion
+1 + 1
+rescue
+ puts "surgio una excepcion"
+else
+  puts "no surgio una excepcion"
+
+end

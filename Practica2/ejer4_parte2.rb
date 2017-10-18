@@ -1,8 +1,8 @@
     module Countable
         INVOCATIONS = {}
         
-        def Countable.included
-           INVOCATIONS[self] = { }
+        def Countable.included(aClass)
+           aClass.
         end
         
         def self.count_invocations_of (sym)
