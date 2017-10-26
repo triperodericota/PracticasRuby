@@ -13,7 +13,7 @@ end
 
 def contar(anString, reemplacement)
     amount = 0
-    %w(anString).each { |word| (amount = amount + 1) if word.downcase.eql? reemplacement.downcase }
+    anString.split(' ').each { |word| (amount = amount + 1) if word.downcase.eql? reemplacement.downcase }
     amount
 end
 
