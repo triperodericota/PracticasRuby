@@ -15,12 +15,13 @@ end
 
 
 def concatenar(*params)
-  str = ""
+  str = params.join(' ')
+  "str = ""
   params.each do |param|
     str << param.to_s + ' '
   end
-  str[str.size - 1] = ''
-  str.gsub(/\s\s/,'')
+  str[str.size - 1] = ''"
+  str.gsub(/\s+/,' ')
 
 end
 
