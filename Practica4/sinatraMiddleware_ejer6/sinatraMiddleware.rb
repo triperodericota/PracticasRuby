@@ -8,10 +8,10 @@ class NoNumberMiddleware
   end
 
   def call(env)
-    body = sinatraApp.call(env)
+    status, headers, body = sinatraApp.call(env)
     puts body
     new_body = body.gsub(/\d/,'x')
-    [new_body]
+    [status, headers, new_body]
   end
 
 end

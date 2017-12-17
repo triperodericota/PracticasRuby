@@ -9,18 +9,13 @@ describe '#concatenar' do
   end
 
   it 'elimina dobles espacios si los hubiera en la salida final' do
-        assert_equal('TTPS', concatenar('TTPS',nil,'   ',"\t","\n",'Ruby'))
+        assert_equal('TTPS Ruby', concatenar('TTPS',nil,'   ',"\t","\n",'Ruby'))
   end
 end
 
 
 def concatenar(*params)
   str = params.join(' ')
-  "str = ""
-  params.each do |param|
-    str << param.to_s + ' '
-  end
-  str[str.size - 1] = ''"
   str.gsub(/\s+/,' ')
 
 end
